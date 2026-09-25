@@ -8,7 +8,7 @@ function App() {
       </section>
 
       <section className="selection-side selection-side-consumer">
-        <h1>YKSITYISHENKILÖILLE</h1>
+        <h1>KULUTTAJILLE</h1>
       </section>
     </main>
   )
