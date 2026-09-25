@@ -1,8 +1,11 @@
 import './styles/App.css'
+import skickLogo from './assets/skick-logo.avif'
 
 function App() {
   return (
     <main className="selection-screen">
+      <img className="skick-logo" src={skickLogo} alt="SKICK" />
+
       <section className="selection-side selection-side-business">
         <h1>YRITYKSILLE</h1>
       </section>
