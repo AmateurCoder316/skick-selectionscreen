@@ -1,17 +1,37 @@
+@font-face {
+  font-family: 'Gulams';
+  src: url('../assets/GulamsCondensedDemoExtrabold-8OBrD.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
 .selection-screen {
   display: flex;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
 }
 
 .selection-side {
+  position: relative;
   width: 50vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   text-decoration: none;
   cursor: pointer;
+  transition: filter 300ms ease;
+}
+
+.selection-side::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background 300ms ease;
 }
 
 .selection-side-business {
@@ -23,18 +43,58 @@
 }
 
 .selection-side h1 {
+  position: relative;
+  z-index: 1;
   margin: 0;
-  color: white;
-  font-size: 4rem;
+  color: #fff;
+  font-family: 'Gulams', sans-serif;
+  font-size: clamp(3.5rem, 7vw, 8rem);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: 0.015em;
   text-align: center;
+  transition: transform 300ms ease, letter-spacing 300ms ease;
+}
+
+.selection-side:hover::after {
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.selection-side:hover h1 {
+  transform: scale(1.035);
+  letter-spacing: 0.035em;
+}
+
+.selection-screen:has(.selection-side:hover) .selection-side:not(:hover) {
+  filter: brightness(0.82);
 }
 
 .skick-logo {
   position: absolute;
-  top: 3vw;
+  top: clamp(1.5rem, 3vw, 3rem);
   left: 50%;
-  width: 10vw;
+  width: clamp(7rem, 10vw, 11rem);
   height: auto;
   transform: translateX(-50%);
   z-index: 10;
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .selection-screen {
+    flex-direction: column;
+  }
+
+  .selection-side {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .selection-side h1 {
+    font-size: clamp(3.25rem, 15vw, 6rem);
+  }
+
+  .skick-logo {
+    width: clamp(6rem, 24vw, 9rem);
+  }
 }
