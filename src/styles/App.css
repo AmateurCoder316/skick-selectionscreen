@@ -9,9 +9,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+}
+
+.selection-side-business {
+  background: #000;
+}
+
+.selection-side-consumer {
+  background: #3a3a3a;
 }
 
 .selection-side h1 {
