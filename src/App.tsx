@@ -6,13 +6,19 @@ function App() {
     <main className="selection-screen">
       <img className="skick-logo" src={skickLogo} alt="SKICK" />
 
-      <section className="selection-side selection-side-business">
+      <a
+        className="selection-side selection-side-business"
+        href="https://example.com"
+      >
         <h1>YRITYKSILLE</h1>
-      </section>
+      </a>
 
-      <section className="selection-side selection-side-consumer">
+      <a
+        className="selection-side selection-side-consumer"
+        href="https://skick.fi"
+      >
         <h1>KULUTTAJILLE</h1>
-      </section>
+      </a>
     </main>
   )
 }
